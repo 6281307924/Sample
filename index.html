@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JALA Academy - Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Keeps everything neat */
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #e6f0fa; /* Light blue background like the image */
+            display: flex;
+            justify-content: center; /* Center the login box */
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            padding: 0; /* No extra padding around the whole thing */
+        }
+
+        .header {
+            text-align: center;
+            padding: 15px 0; /* Some space at the top and bottom */
+            background-color: #fff; /* White background for the header */
+        }
+
+        .header h1 {
+            color: #000;
+            font-size: 28px; /* Bigger heading to match the image */
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            color: #000;
+            font-size: 14px;
+            margin: 5px 0; /* Small gaps between lines */
+        }
+
+        .subtext {
+            color: #000; /* Black text so it’s readable */
+            font-weight: bold;
+            text-align: center;
+            padding: 10px 0; /* Space inside the yellow bar */
+            background-color: #f1c40f; /* Yellow background */
+            margin-top: 10px; /* Gap after the header */
+        }
+
+        .form-section {
+            background-color: #fff; /* White background for the form */
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Little shadow for depth */
+            padding: 20px; /* Space inside the form */
+            text-align: center;
+            margin-top: 10px; /* Space after the yellow bar */
+        }
+
+        .input-group {
+            margin-bottom: 15px; /* Space between input fields */
+            text-align: left; /* Labels on the left */
+        }
+
+        .input-group label {
+            display: block;
+            color: #000;
+            font-size: 14px;
+            margin-bottom: 5px; /* Gap between label and input */
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box; /* Makes sure padding fits inside */
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px; /* Space before the button */
+            text-align: left;
+        }
+
+        .remember-me input {
+            margin-right: 8px; /* Space between checkbox and text */
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff; /* Blue button */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-bottom: 10px; /* Space before the divider */
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Darker blue when hovering */
+        }
+
+        .divider {
+            text-align: center;
+            margin: 10px 0; /* Space around the OR text */
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .links a {
+            display: block;
+            color: #007bff; /* Blue links */
+            text-decoration: none;
+            font-size: 14px;
+            margin: 5px 0; /* Small gaps between links */
+            text-align: center;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            background-color: #007bff; /* Blue background */
+            color: #fff; /* White text so it stands out */
+            padding: 10px; /* Some space inside */
+            border-radius: 5px;
+            margin-top: 10px; /* Gap after the form */
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .footer a {
+            color: #fff; /* White links */
+            text-decoration: underline;
+        }
+
+        .footer a:hover {
+            color: #f1c40f; /* Yellow on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="header">
+            <h1>JALA Academy</h1>
+            <p>Use the below details to login</p>
+            <p>Email: training@jalaacademy.com</p>
+            <p>Password: jp5qr3gym</p>
+        </div>
+        <div class="subtext">
+            <p>Learn everything on Real-Time Scenarios. FREE for all.</p>
+        </div>
+        <form id="loginForm" class="form-section">
+            <div class="input-group">
+                <label for="email">Email or Mobile No:</label>
+                <input type="text" id="email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+            </div>
+            <div class="remember-me">
+                <input type="checkbox" id="remember">
+                <label for="remember">Remember Me</label>
+            </div>
+            <button type="submit">Sign In</button>
+            <div class="divider">- OR -</div>
+            <div class="links">
+                <a href="#">Forgot Password</a>
+                <a href="#">Admin Login</a>
+            </div>
+        </form>
+        <div class="footer">
+            <p>JALA Academy offers Job Guaranteed Programs for Freshers to 12 years' experience on Full Stack Development / Automation Testing / DevOps / QA / SDET / Cyber Security / RPA / Cloud Technologies. Training would be completely on live Project scenarios.</p>
+            <p>Read our website <a href="https://jalaacademy.com/" target="_blank">JALA Academy</a> for more details.</p>
+        </div>
+    </div>
+
+    <script>
+        // Add a function to handle the login form
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Stop the form from doing its usual thing
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const rememberMe = document.getElementById('remember').checked;
+
+            // Check if the email and password match
+            if (email === 'training@jalaacademy.com' && password === 'jp5qr3gym') {
+                alert('Login successful!');
+                if (rememberMe) {
+                    localStorage.setItem('rememberedEmail', email); // Save email if checked
+                }
+                window.location.href = 'http://magnus.jalatechnologies.com'; // Go to the next page
+            } else {
+                alert('Invalid email or password. Try again.');
+            }
+        });
+
+        // Load any saved email when the page opens
+        window.onload = function() {
+            const rememberedEmail = localStorage.getItem('rememberedEmail');
+            if (rememberedEmail) {
+                document.getElementById('email').value = rememberedEmail;
+                document.getElementById('remember').checked = true;
+            }
+        };
+    </script>
+</body>
+</html>
